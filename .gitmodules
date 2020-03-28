@@ -1,0 +1,4 @@
+[submodule "lib/noto-emoji"]
+	path = lib/noto-emoji
+	url = https://github.com/googlefonts/noto-emoji.git
+	branch = master
