@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NotoEmoji } from './icons';
+import { NotoEmoji } from '../icons';
 
 @Injectable({
   providedIn: 'root'
