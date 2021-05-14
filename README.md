@@ -1,4 +1,4 @@
-# Angular Lazy Loaded SVG Icons Library with RPGAwesome Icons
+# Angular Lazy Loaded SVG Icons Library with Noto Emoji Icons
 
 Use the cool emoji from Noto in your app, fully tree-shaked and only loaded when necessary. Injected into the dom, and therefore IE compatible.
 
@@ -15,6 +15,7 @@ Supported Angular Versions
 |  9.x            | 1.0.1                    |
 | 10.x            | 2.0.0                    |
 | 11.x            | 3.0.0                    |
+| 12.x            | 4.0.0                    |
 
 ### Step 1: Install
 
