@@ -1,0 +1,13 @@
+{
+    "conversionType": "files",
+    "modelFileName": "noto-emoji.model",
+    "srcFiles": [
+      "./lib/noto-emoji/svg/**/*.svg"
+    ],
+    "outputDirectory": "./projects/noto-emoji-icons-lib/src/icons",
+    "interfaceName": "NotoEmoji",
+    "typeName": "noto",
+    "prefix": "noto",
+    "optimizeForLazyLoading": true,
+    "compileSources": true
+}

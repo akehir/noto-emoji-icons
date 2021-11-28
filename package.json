@@ -21,19 +21,6 @@
     "postversion": "git push --follow-tags"
   },
   "private": true,
-  "svg-to-ts": {
-    "conversionType": "files",
-    "modelFileName": "noto-emoji.model",
-    "srcFiles": [
-      "./lib/noto-emoji/svg/**/*.svg"
-    ],
-    "outputDirectory": "./projects/noto-emoji-icons-lib/src/icons",
-    "interfaceName": "NotoEmoji",
-    "typeName": "noto",
-    "prefix": "noto",
-    "optimizeForLazyLoading": true,
-    "compileSources": true
-  },
   "dependencies": {
     "@angular/animations": "~13.0.2",
     "@angular/common": "~13.0.2",
