@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { filter, map, throttleTime } from 'rxjs/operators';
 
 @Component({
@@ -27,7 +27,7 @@ import { filter, map, throttleTime } from 'rxjs/operators';
   encapsulation: ViewEncapsulation.None,
 })
 export class SearchComponent implements OnInit {
-  term = new FormControl('');
+  term = new UntypedFormControl('');
   results = [];
   icons = [
     'emoji_u_0023_20_e_3',
