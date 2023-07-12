@@ -19,6 +19,7 @@ Supported Angular Versions
 | 13.x            | 5.0.3                    |
 | 14.x            | 6.0.0                    |
 | 15.x            | 7.0.0                    |
+| 16.x            | 8.0.0                    |
 
 ### Step 1: Install
 

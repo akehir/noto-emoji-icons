@@ -3,8 +3,8 @@ import { NotoEmojiIconComponent } from './icon.component';
 import { NotoEmojiIconsRegistry } from './icons.registry';
 
 @NgModule({
-  declarations: [NotoEmojiIconComponent],
-  imports: [],
+  declarations: [],
+  imports: [NotoEmojiIconComponent],
   exports: [NotoEmojiIconComponent]
 })
 export class NotoEmojiIconsModule {

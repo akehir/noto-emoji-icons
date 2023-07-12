@@ -15,7 +15,8 @@ import { DOCUMENT } from '@angular/common';
   selector: 'noto-emoji',
   template: `<ng-content></ng-content>`,
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true
 })
 export class NotoEmojiIconComponent {
   private svgIcon: SVGElement;
