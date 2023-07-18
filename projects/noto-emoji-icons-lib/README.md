@@ -52,6 +52,7 @@ export class AppModule { }
 ### Step 3: Register the Icons in the Registry
 The tree-shaking magic happens when you import icons from   __@triangular/noto-emoji-icons/icons__ and register them in the  __NotoEmojiIconsRegistry__. By explicitly importing the icons where they are required, the tree shaking can ensure they are loaded when they are needed. If an icon is not required, it will not be bundled in your application. If an icon is required in a feature module, it will be bundled with the feature module. And if the icon is bundled in multiple feature modules, it will be bundled with the common bundle - in order to not download the same icon multiple times.
 
+#### Step 3a: Angular App with Modules
 ```typescript
 import { Component } from '@angular/core';
 import { NotoEmojiIconsRegistry } from '@triangular/noto-emoji-icons';
@@ -64,6 +65,35 @@ import {
   selector: 'app-some-component-with-icons',
   template: '<noto-emoji name="emoji_u_0023"></noto-emoji>',
   styles: 'svg { color: #ccc; fill: currentColor; width: 5rem; height: 5rem; }',
+})
+export class SomeComponentWithIcons {
+
+  constructor(private registry: NotoEmojiIconsRegistry) {
+    registry.registerIcons([
+      notoEmojiU0023,
+      // add more icons here
+    ]);
+  }
+}
+```
+
+#### Step 3b: Standalone Angular App
+```typescript
+import { Component } from '@angular/core';
+import { NotoEmojiIconComponent, NotoEmojiIconsRegistry } from '@triangular/noto-emoji-icons';
+import {
+  notoEmojiU0023,
+  // add more icons here
+} from '@triangular/noto-emoji-icons/icons';
+
+@Component({
+  selector: 'app-some-component-with-icons',
+  template: '<noto-emoji name="emoji_u_0023"></noto-emoji>',
+  styles: 'svg { color: #ccc; fill: currentColor; width: 5rem; height: 5rem; }',
+  standalone: true,
+  imports: [
+    NotoEmojiIconComponent,
+  ]
 })
 export class SomeComponentWithIcons {
 

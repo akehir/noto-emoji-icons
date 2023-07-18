@@ -5,6 +5,7 @@
     Use the cool emoji from the Noto font in your angular app, fully tree-shaked and only loaded when necessary. Injected into the dom, and therefore IE compatible.
     Click a button above to load a module containing the 116 emoji from the Noto font.
   </p>
+  <p>Also works in standalone applications.</p>
   <app-search></app-search>
 </section>
 <nav>
@@ -50,11 +51,15 @@
 
   <h3>Step 2: Add to NgModule Imports</h3>
   <p>Then, add the <strong>NotoEmojiIconsModule</strong> to the imports of your app, as follows:</p>
+  <p>(if you're using standalone components, you can skip this step).</p>
   <pre>{{step2}}</pre>
 
   <h3>Step 3: Register the Icons in the Registry</h3>
   <p>The tree-shaking magic happens when you import icons from <strong>@triangular/noto-emoji-icons/icons</strong> and register them in the  <strong>NotoEmojiIconsRegistry</strong>. By explicitly importing the icons where they are required, the tree shaking can ensure they are loaded when they are needed. If an icon is not required, it will not be bundled in your application. If an icon is required in a feature module, it will be bundled with the feature module. And if the icon is bundled in multiple feature modules, it will be bundled with the common bundle - in order to not download the same icon multiple times.</p>
-  <pre>{{step3}}</pre>
+  <h4>Step 3a: Angular App with Modules</h4>
+  <pre>{{step3a}}</pre>
+  <h4>Step 3b: Standalone Angular App</h4>
+  <pre>{{step3b}}</pre>
 
   <h3>Step 4: Enjoy using the Icons with a Peace of Mind</h3>
   <p>Once an icon has been registered, it can simply be used in your template. If you get the error <em>can't bind to 'name' since it isn't a known property of 'noto-emoji-icon'</em>, you need to include the <strong>NotoEmojiIconsModule</strong> in your module.</p>

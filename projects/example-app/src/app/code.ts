@@ -35,4 +35,30 @@ export class SomeComponentWithIcons {
   }
 }`;
 
+export const standaloneComponent = `import { Component } from '@angular/core';
+import { NotoEmojiIconComponent, NotoEmojiIconsRegistry } from '@triangular/noto-emoji-icons';
+import {
+  notoEmojiU0023,
+  // add more icons here
+} from '@triangular/noto-emoji-icons/icons';
+
+@Component({
+  selector: 'app-some-component-with-icons',
+  template: '<noto-emoji name="emoji_u_0023"></noto-emoji>',
+  styles: 'svg { color: #ccc; fill: currentColor; width: 5rem; height: 5rem; }',
+  standalone: true,
+  imports: [
+    NotoEmojiIconComponent,
+  ]
+})
+export class SomeComponentWithIcons {
+
+  constructor(private registry: NotoEmojiIconsRegistry) {
+    registry.registerIcons([
+      notoEmojiU0023,
+      // add more icons here
+    ]);
+  }
+}`;
+
 export const usage = `<noto-emoji name="emoji_u_0023"></noto-emoji>`;
