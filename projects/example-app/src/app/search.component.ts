@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router } from '@angular/router';
 import { UntypedFormControl } from '@angular/forms';
 import { filter, map, throttleTime } from 'rxjs/operators';
 
@@ -3017,9 +3016,6 @@ export class SearchComponent implements OnInit {
     'emoji_u_3299',
     'emoji_ufe_82_b',
   ];
-
-  constructor() {
-  }
 
   ngOnInit(): void {
     this.term.valueChanges.pipe(

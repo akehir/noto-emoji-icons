@@ -14,6 +14,4 @@ export class AppComponent {
   step3a = component;
   step3b = standaloneComponent;
   step4 = usage;
-
-  constructor() {}
 }

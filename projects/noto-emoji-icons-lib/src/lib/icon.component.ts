@@ -37,7 +37,7 @@ export class NotoEmojiIconComponent {
   constructor(
     private element: ElementRef,
     private iconsRegistry: NotoEmojiIconsRegistry,
-    @Optional() @Inject(DOCUMENT) private document: any,
+    @Optional() @Inject(DOCUMENT) private document: Document,
   ) {
   }
 
