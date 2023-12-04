@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: noto-emoji-ingress
+  namespace: triangular
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: noto-emoji.akehir.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: noto-emoji
+                port:
+                  number: 8001
+  tls:
+    - hosts:
+      - noto-emoji.akehir.com
+      secretName: noto-emoji-akehir-com

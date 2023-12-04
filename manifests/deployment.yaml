@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: noto-emoji
+  namespace: triangular
+spec:
+  selector:
+    matchLabels:
+      app: noto-emoji
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: noto-emoji
+    spec:
+      containers:
+      - name: noto-emoji-example-app
+        image: registry.akehir.com:5050/triangular/noto-emoji/noto-emoji-example-app:master
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8811
+      imagePullSecrets:
+      - name: deploy-triangular
