@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: noto-emoji-example-app
-        image: registry.akehir.com:443/triangular/noto-emoji/noto-emoji-example-app:develop  # {"$imagepolicy": "triangular:noto-emoji-example-app-image-policy"}
+        image: registry.akehir.com:443/triangular/noto-emoji/noto-emoji-example-app:develop-b7b068fd-1715603116 # {"$imagepolicy": "triangular:noto-emoji-example-app-image-policy"}
         imagePullPolicy: Always
         ports:
         - containerPort: 8811
