@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,20 +15,21 @@ spec:
         app: noto-emoji
     spec:
       containers:
-      - name: noto-emoji-example-app
-        image: registry.akehir.com:443/triangular/noto-emoji/noto-emoji-example-app:develop-cbed5de0-1727801418 # {"$imagepolicy": "triangular:noto-emoji-example-app-image-policy"}
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8811
+        - name: noto-emoji-example-app
+          image: registry.akehir.com:443/triangular/noto-emoji/noto-emoji-example-app:develop-cbed5de0-1727801418 # {"$imagepolicy": "triangular:noto-emoji-example-app-image-policy"}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8811
       imagePullSecrets:
-      - name: deploy-triangular
+        - name: deploy-triangular
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 1
-            preference:
-              matchExpressions:
-              - key: kubernetes.io/arch
-                operator: In
-                values:
-                - arm64
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.io/arch
+                    operator: In
+                    values:
+                      - arm64
+---

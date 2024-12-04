@@ -120,11 +120,13 @@ import {
   notoEmojiU1F4691F3Fb200D1F91D200D1F4681F3Fe,
 } from '@triangular/noto-emoji-icons/icons';
 
+// eslint-disable-next-line @angular-eslint/prefer-standalone
 @Component({
   selector: 'app-icons-g',
   templateUrl: './icons-g.component.html',
   styleUrls: [],
   encapsulation: ViewEncapsulation.None,
+  standalone: false
 })
 export class IconsGComponent {
   icons = [
