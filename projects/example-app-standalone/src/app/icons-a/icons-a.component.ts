@@ -122,15 +122,14 @@ import {
 } from '@triangular/noto-emoji-icons/icons';
 
 @Component({
-  selector: 'app-icons-a',
-  templateUrl: './icons-a.component.html',
-  styleUrls: [],
-  encapsulation: ViewEncapsulation.None,
-  standalone: true,
-  imports: [
-    NotoEmojiIconComponent,
-    NgForOf
-  ]
+    selector: 'app-icons-a',
+    templateUrl: './icons-a.component.html',
+    styleUrls: [],
+    encapsulation: ViewEncapsulation.None,
+    imports: [
+        NotoEmojiIconComponent,
+        NgForOf
+    ]
 })
 export class IconsAComponent {
   icons = [
