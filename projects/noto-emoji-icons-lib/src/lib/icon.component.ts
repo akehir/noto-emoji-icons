@@ -6,9 +6,10 @@ import {
   Input,
   Optional,
   ViewEncapsulation,
+  DOCUMENT
 } from '@angular/core';
 import { NotoEmojiIconsRegistry } from './icons.registry';
-import { DOCUMENT } from '@angular/common';
+
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector

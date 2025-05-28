@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { NgForOf } from '@angular/common';
+
 import { NotoEmojiIconComponent, NotoEmojiIconsRegistry, } from '@triangular/noto-emoji-icons';
 
 import {
@@ -127,9 +127,8 @@ import {
     styleUrls: [],
     encapsulation: ViewEncapsulation.None,
     imports: [
-        NotoEmojiIconComponent,
-        NgForOf
-    ]
+    NotoEmojiIconComponent
+]
 })
 export class IconsBComponent {
   icons = [
