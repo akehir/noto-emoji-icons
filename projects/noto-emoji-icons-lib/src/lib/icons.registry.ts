@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { NotoEmoji } from '../icons';
+
+interface AnyRegistryIcon {
+  name: string;
+  data: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +12,8 @@ export class NotoEmojiIconsRegistry {
 
   private registry = new Map<string, string>();
 
-  public registerIcons(icons: NotoEmoji[]): void {
-    icons.forEach((icon: NotoEmoji) => this.registry.set(icon.name, icon.data));
+  public registerIcons(icons: AnyRegistryIcon[]): void {
+    icons.forEach((icon: AnyRegistryIcon) => this.registry.set(icon.name, icon.data));
   }
 
   public getIcon(iconName: string): string | undefined {
