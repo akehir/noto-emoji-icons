@@ -1,12 +1,13 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotoEmojiIconsModule } from '@triangular/noto-emoji-icons';
-import { RouterTestingModule } from '@angular/router/testing';
+import {provideZonelessChangeDetection} from "@angular/core";
+import {provideRouter, RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
 
 describe('AppComponent', () => {
-  beforeEach(waitForAsync(() => {
+  beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
@@ -15,11 +16,17 @@ describe('AppComponent', () => {
       imports: [
         FormsModule,
         ReactiveFormsModule,
-        RouterTestingModule,
         NotoEmojiIconsModule,
+        RouterLink,
+        RouterLinkActive,
+        RouterOutlet
       ],
-    }).compileComponents();
-  }));
+      providers: [
+        provideZonelessChangeDetection(),
+        provideRouter([]),
+      ]
+    }).compileComponents()
+  );
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);

@@ -1,13 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  Inject,
-  Input,
-  Optional,
-  ViewEncapsulation,
-  DOCUMENT
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewEncapsulation, DOCUMENT, inject } from '@angular/core';
 import { NotoEmojiIconsRegistry } from './icons.registry';
 
 
@@ -20,6 +11,10 @@ import { NotoEmojiIconsRegistry } from './icons.registry';
   standalone: true
 })
 export class NotoEmojiIconComponent {
+  private element = inject(ElementRef);
+  private iconsRegistry = inject(NotoEmojiIconsRegistry);
+  private document = inject<Document>(DOCUMENT, { optional: true });
+
   private svgIcon: SVGElement;
 
   @Input()
@@ -33,13 +28,6 @@ export class NotoEmojiIconComponent {
       this.svgIcon = this.svgElementFromString(svgData);
       this.element.nativeElement.appendChild(this.svgIcon);
     }
-  }
-
-  constructor(
-    private element: ElementRef,
-    private iconsRegistry: NotoEmojiIconsRegistry,
-    @Optional() @Inject(DOCUMENT) private document: Document,
-  ) {
   }
 
   private svgElementFromString(svgContent: string): SVGElement {

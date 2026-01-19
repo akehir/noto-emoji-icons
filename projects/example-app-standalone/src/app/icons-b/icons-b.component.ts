@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 
 import { NotoEmojiIconComponent, NotoEmojiIconsRegistry, } from '@triangular/noto-emoji-icons';
 
@@ -131,6 +131,8 @@ import {
 ]
 })
 export class IconsBComponent {
+  private registry = inject(NotoEmojiIconsRegistry);
+
   icons = [
     notoEmojiU1F320,
     notoEmojiU1F321,
@@ -250,7 +252,9 @@ export class IconsBComponent {
     notoEmojiU1F390,
   ];
 
-  constructor(private registry: NotoEmojiIconsRegistry) {
+  constructor() {
+    const registry = this.registry;
+
     registry.registerIcons(this.icons);
   }
 
