@@ -1,9 +1,9 @@
 {
   "name": "@triangular/noto-emoji-icons",
-  "version": "20.0.0",
+  "version": "21.0.0",
   "peerDependencies": {
-    "@angular/common": "^20.0.0",
-    "@angular/core": "^20.0.0"
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0"
   },
   "homepage": "https://noto-emoji.akehir.com",
   "license" : "MIT",
@@ -12,10 +12,10 @@
     "url": "https://github.com/akehir/noto-emoji-icons"
   },
   "bugs": { "url" : "https://github.com/akehir/noto-emoji-icons/issues"
-  , "email" : "raphael@ochsenbe.in"
+  , "email" : "raphael@akehir.com"
   },
   "author": { "name" : "Raphael Ochsenbein"
-            , "email" : "raphael@ochsenbe.in"
+            , "email" : "raphael@akehir.com"
             , "url" : "https://akehir.com/"
   },
   "dependencies": {

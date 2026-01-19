@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, inject } from '@angular/core';
 import { NotoEmojiIconsRegistry, } from '@triangular/noto-emoji-icons';
 
 import {
@@ -128,6 +128,8 @@ import {
   standalone: false // eslint-disable-line @angular-eslint/prefer-standalone
 })
 export class IconsJComponent {
+  private registry = inject(NotoEmojiIconsRegistry);
+
   icons = [
     notoEmojiU1F4711F3Fc200D2642,
     notoEmojiU1F4711F3Fd,
@@ -247,7 +249,9 @@ export class IconsJComponent {
     notoEmojiU1F4821F3Fc200D2642,
   ];
 
-  constructor(private registry: NotoEmojiIconsRegistry) {
+  constructor() {
+    const registry = this.registry;
+
     registry.registerIcons(this.icons);
   }
 

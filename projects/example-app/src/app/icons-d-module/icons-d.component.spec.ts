@@ -1,4 +1,4 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IconsDComponent } from './icons-d.component';
 import { NotoEmojiIconsModule } from '@triangular/noto-emoji-icons';
@@ -7,15 +7,15 @@ describe('IconsDComponent', () => {
   let component: IconsDComponent;
   let fixture: ComponentFixture<IconsDComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(() =>
     TestBed.configureTestingModule({
       declarations: [ IconsDComponent ],
       imports: [
         NotoEmojiIconsModule,
       ]
     })
-    .compileComponents();
-  }));
+    .compileComponents()
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(IconsDComponent);
