@@ -1,6 +1,13 @@
-import { Component, ViewEncapsulation, inject } from '@angular/core';
+import {
+  Component,
+  ViewEncapsulation,
+  inject,
+} from "@angular/core";
 
-import { NotoEmojiIconComponent, NotoEmojiIconsRegistry } from '@triangular/noto-emoji-icons';
+import {
+  NotoEmojiIconComponent,
+  NotoEmojiIconsRegistry,
+} from "@triangular/noto-emoji-icons";
 
 import {
   notoEmojiU0023,
@@ -119,16 +126,14 @@ import {
   notoEmojiU1F31D,
   notoEmojiU1F31E,
   notoEmojiU1F31F,
-} from '@triangular/noto-emoji-icons/icons';
+} from "@triangular/noto-emoji-icons/icons";
 
 @Component({
-    selector: 'app-icons-a',
-    templateUrl: './icons-a.component.html',
-    styleUrls: [],
-    encapsulation: ViewEncapsulation.None,
-    imports: [
-    NotoEmojiIconComponent
-]
+  selector: "app-icons-a",
+  templateUrl: "./icons-a.component.html",
+  styleUrls: [],
+  encapsulation: ViewEncapsulation.None,
+  imports: [NotoEmojiIconComponent],
 })
 export class IconsAComponent {
   private registry = inject(NotoEmojiIconsRegistry);
@@ -257,5 +262,4 @@ export class IconsAComponent {
 
     registry.registerIcons(this.icons);
   }
-
 }
