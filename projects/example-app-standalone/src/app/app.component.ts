@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-
+import { RouterLink, RouterLinkActive, RouterOutlet } from "@angular/router";
 
 @Component({
-    selector: 'app-root',
-    imports: [RouterOutlet, RouterLink, RouterLinkActive],
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css']
+  selector: "app-root",
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  templateUrl: "./app.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  title = 'Angular Noto Lazy Loaded Emoji Lib Standalone';
+  title = "Angular Noto Lazy Loaded Emoji Lib Standalone";
 }
