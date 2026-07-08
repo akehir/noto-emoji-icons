@@ -2,7 +2,6 @@ import {
   Component,
   ViewEncapsulation,
   inject,
-  ChangeDetectionStrategy,
 } from "@angular/core";
 
 import {
@@ -134,7 +133,6 @@ import {
   templateUrl: "./icons-b.component.html",
   styleUrls: [],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [NotoEmojiIconComponent],
 })
 export class IconsBComponent {

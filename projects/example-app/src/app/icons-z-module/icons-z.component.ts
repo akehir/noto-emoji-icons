@@ -2,7 +2,6 @@ import {
   Component,
   ViewEncapsulation,
   inject,
-  ChangeDetectionStrategy,
 } from "@angular/core";
 import { NotoEmojiIconsRegistry } from "@triangular/noto-emoji-icons";
 
@@ -100,7 +99,6 @@ import {
   templateUrl: "./icons-z.component.html",
   styleUrls: [],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false, // eslint-disable-line @angular-eslint/prefer-standalone
 })
 export class IconsZComponent {

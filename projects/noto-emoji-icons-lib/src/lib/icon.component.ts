@@ -15,7 +15,7 @@ export class NotoEmojiIconComponent {
   private iconsRegistry = inject(NotoEmojiIconsRegistry);
   private document = inject<Document>(DOCUMENT, { optional: true });
 
-  private svgIcon: SVGElement;
+  private svgIcon?: SVGElement;
 
   @Input()
   set name(iconName: string) {
@@ -30,11 +30,11 @@ export class NotoEmojiIconComponent {
     }
   }
 
-  private svgElementFromString(svgContent: string): SVGElement {
-    const div = this.document.createElement('DIV');
+  private svgElementFromString(svgContent: string): SVGElement | undefined {
+    const div = this.document?.createElement('DIV');
     if (div instanceof HTMLElement) {
       div.innerHTML = svgContent;
-      return div.querySelector('svg') || this.document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      return div.querySelector('svg') || this.document?.createElementNS('http://www.w3.org/2000/svg', 'path');
     }
   }
 }

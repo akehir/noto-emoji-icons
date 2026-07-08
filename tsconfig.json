@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "esModuleInterop": true,
     "sourceMap": true,
@@ -16,10 +15,10 @@
     ],
     "paths": {
       "@triangular/noto-emoji-icons": [
-        "dist/noto-emoji-icons"
+        "./dist/noto-emoji-icons"
       ],
       "@triangular/noto-emoji-icons/*": [
-        "dist/noto-emoji-icons/*"
+        "./dist/noto-emoji-icons/*"
       ]
     },
     "useDefineForClassFields": false
