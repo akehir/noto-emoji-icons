@@ -9,12 +9,9 @@ describe('IconsQComponent', () => {
 
   beforeEach(() =>
     TestBed.configureTestingModule({
-      declarations: [ IconsQComponent ],
-      imports: [
-        NotoEmojiIconsModule,
-      ]
-    })
-    .compileComponents()
+      declarations: [IconsQComponent],
+      imports: [NotoEmojiIconsModule],
+    }).compileComponents()
   );
 
   beforeEach(() => {

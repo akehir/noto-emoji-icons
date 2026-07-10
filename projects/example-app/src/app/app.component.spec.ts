@@ -3,28 +3,27 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotoEmojiIconsModule } from '@triangular/noto-emoji-icons';
-import {provideZonelessChangeDetection} from "@angular/core";
-import {provideRouter, RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
+import { provideZonelessChangeDetection } from '@angular/core';
+import {
+  provideRouter,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        SearchComponent,
-      ],
+      declarations: [AppComponent, SearchComponent],
       imports: [
         FormsModule,
         ReactiveFormsModule,
         NotoEmojiIconsModule,
         RouterLink,
         RouterLinkActive,
-        RouterOutlet
+        RouterOutlet,
       ],
-      providers: [
-        provideZonelessChangeDetection(),
-        provideRouter([]),
-      ]
+      providers: [provideZonelessChangeDetection(), provideRouter([])],
     }).compileComponents()
   );
 
@@ -44,6 +43,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Angular Noto Lazy Loaded Emoji Lib');
+    expect(compiled.querySelector('h1').textContent).toContain(
+      'Angular Noto Lazy Loaded Emoji Lib'
+    );
   });
 });

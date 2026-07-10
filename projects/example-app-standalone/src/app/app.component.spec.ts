@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import {provideRouter } from "@angular/router";
+import { provideRouter } from '@angular/router';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    providers: [
-      provideRouter([])
-    ]
-  }));
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      providers: [provideRouter([])],
+    })
+  );
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -25,5 +25,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Angular Noto Lazy Loaded Emoji Lib Standalone');  });
+    expect(compiled.querySelector('h1').textContent).toContain(
+      'Angular Noto Lazy Loaded Emoji Lib Standalone'
+    );
+  });
 });

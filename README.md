@@ -3,6 +3,7 @@
 Use the cool emoji from Noto in your app, fully tree-shaked and only loaded when necessary. Injected into the dom, and therefore IE compatible.
 
 ## Live Demo
+
 The live demo can be found at https://noto-emoji.akehir.com.
 
 ## Getting Started
@@ -10,22 +11,23 @@ The live demo can be found at https://noto-emoji.akehir.com.
 If you just want to use the library, follow the following 4 simple steps. For contributing, or building the library locally, see the section on [building](#building) the library.
 
 Supported Angular Versions
-| Angular Version | Library Version          |
-| --------------- | ------------------------ |
-|  9.x            |  1.0.1                   |
-| 10.x            |  2.0.0                   |
-| 11.x            |  3.0.0                   |
-| 12.x            |  4.0.0                   |
-| 13.x            |  5.0.3                   |
-| 14.x            |  6.0.0                   |
-| 15.x            |  7.0.0                   |
-| 16.x            |  8.0.0                   |
-| 17.x            |  9.0.0                   |
-| 18.x            | 10.0.1  - 10.2.0         |
-| 19.x            | 11.0.0                   |
-| 20.x            | 20.0.0                   |
-| 21.x            | 21.0.0                   |
-| 22.x            | 22.0.1                   |
+
+| Angular Version | Library Version |
+| --------------- | --------------- |
+| 9.x             | 1.0.1           |
+| 10.x            | 2.0.0           |
+| 11.x            | 3.0.0           |
+| 12.x            | 4.0.0           |
+| 13.x            | 5.0.3           |
+| 14.x            | 6.0.0           |
+| 15.x            | 7.0.0           |
+| 16.x            | 8.0.0           |
+| 17.x            | 9.0.0           |
+| 18.x            | 10.0.1 - 10.2.0 |
+| 19.x            | 11.0.0          |
+| 20.x            | 20.0.0          |
+| 21.x            | 21.0.0          |
+| 22.x            | 22.0.1          |
 
 ### Step 1: Install
 
@@ -37,28 +39,27 @@ npm i @triangular/noto-emoji-icons
 
 ### Step 2: Add to NgModule Imports
 
-Then, add the __NotoEmojiIconsModule__ to the imports of your module(s).
+Then, add the **NotoEmojiIconsModule** to the imports of your module(s).
 
 ```typescript
 import { NgModule } from '@angular/core';
 import { NotoEmojiIconsModule } from '@triangular/noto-emoji-icons';
 
 @NgModule({
-    declarations: [
-    ],
-    imports: [
-      NotoEmojiIconsModule,
-    ],
-    providers: [],
-    bootstrap: [],
+  declarations: [],
+  imports: [NotoEmojiIconsModule],
+  providers: [],
+  bootstrap: [],
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 ### Step 3: Register the Icons in the Registry
-The tree-shaking magic happens when you import icons from   __@triangular/noto-emoji-icons/icons__ and register them in the  __NotoEmojiIconsRegistry__. By explicitly importing the icons where they are required, the tree shaking can ensure they are loaded when they are needed. If an icon is not required, it will not be bundled in your application. If an icon is required in a feature module, it will be bundled with the feature module. And if the icon is bundled in multiple feature modules, it will be bundled with the common bundle - in order to not download the same icon multiple times.
+
+The tree-shaking magic happens when you import icons from **@triangular/noto-emoji-icons/icons** and register them in the **NotoEmojiIconsRegistry**. By explicitly importing the icons where they are required, the tree shaking can ensure they are loaded when they are needed. If an icon is not required, it will not be bundled in your application. If an icon is required in a feature module, it will be bundled with the feature module. And if the icon is bundled in multiple feature modules, it will be bundled with the common bundle - in order to not download the same icon multiple times.
 
 #### Step 3a: Angular App with Modules
+
 ```typescript
 import { Component } from '@angular/core';
 import { NotoEmojiIconsRegistry } from '@triangular/noto-emoji-icons';
@@ -73,7 +74,6 @@ import {
   styles: 'svg { color: #ccc; fill: currentColor; width: 5rem; height: 5rem; }',
 })
 export class SomeComponentWithIcons {
-
   constructor(private registry: NotoEmojiIconsRegistry) {
     registry.registerIcons([
       notoEmojiU0023,
@@ -84,9 +84,13 @@ export class SomeComponentWithIcons {
 ```
 
 #### Step 3b: Standalone Angular App
+
 ```typescript
 import { Component } from '@angular/core';
-import { NotoEmojiIconComponent, NotoEmojiIconsRegistry } from '@triangular/noto-emoji-icons';
+import {
+  NotoEmojiIconComponent,
+  NotoEmojiIconsRegistry,
+} from '@triangular/noto-emoji-icons';
 import {
   notoEmojiU0023,
   // add more icons here
@@ -97,12 +101,9 @@ import {
   template: '<noto-emoji name="emoji_u_0023"></noto-emoji>',
   styles: 'svg { color: #ccc; fill: currentColor; width: 5rem; height: 5rem; }',
   standalone: true,
-  imports: [
-    NotoEmojiIconComponent,
-  ]
+  imports: [NotoEmojiIconComponent],
 })
 export class SomeComponentWithIcons {
-
   constructor(private registry: NotoEmojiIconsRegistry) {
     registry.registerIcons([
       notoEmojiU0023,
@@ -113,17 +114,20 @@ export class SomeComponentWithIcons {
 ```
 
 ### Step 4: Enjoy using the Icons with a Peace of Mind
-Once an icon has been registered, it can simply be used in your template. If you get the error `can't bind to 'name' since it isn't a known property of 'noto-emoji-icon'`, you need to include the __NotoEmojiIconsModule__ in your module. 
+
+Once an icon has been registered, it can simply be used in your template. If you get the error `can't bind to 'name' since it isn't a known property of 'noto-emoji-icon'`, you need to include the **NotoEmojiIconsModule** in your module.
 
 ```html
 <noto-emoji name="emoji_u_0023"></noto-emoji>
 ```
 
 ## Building
+
 As a pre-requisite to build the library, you need to install all the dependencies via `npm install` or `yarn`.
-Furthermore, you will need to sync the projects submodules `git submodule sync --recursive` and  `git submodule update --init --recursive`.
+Furthermore, you will need to sync the projects submodules `git submodule sync --recursive` and `git submodule update --init --recursive`.
 
 ### Building the Library
+
 Before the sample app can be run, you need to build the library itself.
 
 ```
@@ -131,6 +135,7 @@ npm run build:lib
 ```
 
 ### Building the Sample App
+
 After building the library, it is either possible to build the sample app, via
 
 ```
@@ -144,6 +149,7 @@ npm run start:app
 ```
 
 ### Checking the bundle of the Sample App
+
 You can verify how the application is bundled with the following command:
 
 ```
@@ -153,6 +159,7 @@ npm run analyze
 ## Running the tests
 
 ### Unit Tests
+
 There are not many tests, but those that are can be run with:
 
 ```
@@ -169,9 +176,9 @@ npm run lint
 
 ## Built With
 
-* [Angular](https://github.com/angular/angular) - The web framework used
-* [NPM](https://www.npmjs.com/) - Dependency Management
-* [Gitlab](https://git.akehir.com) - Source Control & CI Runner
+- [Angular](https://github.com/angular/angular) - The web framework used
+- [NPM](https://www.npmjs.com/) - Dependency Management
+- [Gitlab](https://git.akehir.com) - Source Control & CI Runner
 
 ## Contributing
 
@@ -183,7 +190,7 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **Raphael Ochsenbein** - *Initial work* - [Akehir](https://github.com/akehir)
+- **Raphael Ochsenbein** - _Initial work_ - [Akehir](https://github.com/akehir)
 
 See also the list of [contributors](https://github.com/akehir/noto-emoji-icons/contributors) who participated in this project.
 
@@ -193,8 +200,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* [Google Fonts](https://github.com/googlefonts/noto-emoji) for creating the noto emoji's
-* [Kevin Kreuzer (kreuzerk)](https://medium.com/angular-in-depth/how-to-create-a-fully-tree-shakable-icon-library-in-angular-c5488cf9cd76) For creating a tutorial and package for creating a lazy loaded angular library
-* [Todd Palmer](https://indepth.dev/creating-a-library-in-angular-6-using-angular-cli-and-ng-packagr/) for a tutorial for creating an angular library
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2/) for the readme template
-
+- [Google Fonts](https://github.com/googlefonts/noto-emoji) for creating the noto emoji's
+- [Kevin Kreuzer (kreuzerk)](https://medium.com/angular-in-depth/how-to-create-a-fully-tree-shakable-icon-library-in-angular-c5488cf9cd76) For creating a tutorial and package for creating a lazy loaded angular library
+- [Todd Palmer](https://indepth.dev/creating-a-library-in-angular-6-using-angular-cli-and-ng-packagr/) for a tutorial for creating an angular library
+- [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2/) for the readme template

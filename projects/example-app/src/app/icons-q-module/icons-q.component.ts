@@ -1,9 +1,5 @@
-import {
-  Component,
-  ViewEncapsulation,
-  inject,
-} from "@angular/core";
-import { NotoEmojiIconsRegistry } from "@triangular/noto-emoji-icons";
+import { Component, ViewEncapsulation, inject } from '@angular/core';
+import { NotoEmojiIconsRegistry } from '@triangular/noto-emoji-icons';
 
 import {
   notoEmojiU1F6C5,
@@ -122,11 +118,11 @@ import {
   notoEmojiU1F924,
   notoEmojiU1F925,
   notoEmojiU1F926,
-} from "@triangular/noto-emoji-icons/icons";
+} from '@triangular/noto-emoji-icons/icons';
 
 @Component({
-  selector: "app-icons-q",
-  templateUrl: "./icons-q.component.html",
+  selector: 'app-icons-q',
+  templateUrl: './icons-q.component.html',
   styleUrls: [],
   encapsulation: ViewEncapsulation.None,
   standalone: false, // eslint-disable-line @angular-eslint/prefer-standalone

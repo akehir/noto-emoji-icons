@@ -4,16 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { IconsZComponent } from './icons-z.component';
 import { NotoEmojiIconsModule } from '@triangular/noto-emoji-icons';
 
-const routes: Routes = [
-  { path: '', component: IconsZComponent }
-];
+const routes: Routes = [{ path: '', component: IconsZComponent }];
 
 @NgModule({
   declarations: [IconsZComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    NotoEmojiIconsModule,
-  ]
+  imports: [CommonModule, RouterModule.forChild(routes), NotoEmojiIconsModule],
 })
-export class IconsZModule { }
+export class IconsZModule {}
