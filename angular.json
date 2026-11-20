@@ -27,11 +27,11 @@
           }
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/noto-emoji-icons-lib/src/test.ts",
-            "tsConfig": "projects/noto-emoji-icons-lib/tsconfig.spec.json",
-            "karmaConfig": "projects/noto-emoji-icons-lib/karma.conf.js"
+            "zoneless": true,
+            "coverageDirectory": "<rootDir>/coverage/noto-emoji-icons-lib",
+            "modulePathIgnorePatterns": ["<rootDir>/dist/"]
           }
         },
         "lint": {
@@ -119,18 +119,11 @@
           }
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/example-app/src/test.ts",
-            "polyfills": [],
-            "tsConfig": "projects/example-app/tsconfig.spec.json",
-            "karmaConfig": "projects/example-app/karma.conf.js",
-            "styles": ["projects/example-app/src/styles.css"],
-            "scripts": [],
-            "assets": [
-              "projects/example-app/src/favicon.ico",
-              "projects/example-app/src/assets"
-            ]
+            "zoneless": true,
+            "coverageDirectory": "<rootDir>/coverage/example-app",
+            "modulePathIgnorePatterns": ["<rootDir>/dist/"]
           }
         },
         "lint": {
@@ -221,17 +214,11 @@
           }
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular-builders/jest:run",
           "options": {
-            "polyfills": [],
-            "tsConfig": "projects/example-app-standalone/tsconfig.spec.json",
-            "assets": [
-              "projects/example-app-standalone/src/favicon.ico",
-              "projects/example-app-standalone/src/assets"
-            ],
-            "styles": ["projects/example-app-standalone/src/styles.css"],
-            "scripts": [],
-            "karmaConfig": "projects/example-app-standalone/karma.conf.js"
+            "zoneless": true,
+            "coverageDirectory": "<rootDir>/coverage/example-app-standalone",
+            "modulePathIgnorePatterns": ["<rootDir>/dist/"]
           }
         },
         "lint": {

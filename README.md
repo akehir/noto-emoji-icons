@@ -163,7 +163,16 @@ npm run analyze
 There are not many tests, but those that are can be run with:
 
 ```
-npm run test -- --no-watch --progress=false --code-coverage --browsers ChromeHeadless
+npm run test
+```
+
+Jest is used as the test runner (via `@angular-builders/jest`); it runs headlessly in
+jsdom, so no browser is required. Coverage is written to `coverage/<project>`.
+To work on a single project, or in watch mode:
+
+```
+ng test example-app
+ng test example-app --watch
 ```
 
 ### And coding style tests
